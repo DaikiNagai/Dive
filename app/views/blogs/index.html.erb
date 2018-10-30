@@ -1,10 +1,13 @@
-    <h3>Tweet一覧</h3>
-    
-    
-    <% @blog.each do |tweet| %>
-    <h4>Tweet:<%= tweet.content %></h4>
-    <%= link_to "編集する", edit_blog_path(tweet.id) %>
-    <%= link_to "削除する", blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'} %>
-    <% end %>
-    
-    <%= link_to "New tweet", new_blog_path %>
+<div class="container">
+    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+        <h3>Tweet一覧</h3>
+        <%= link_to "New tweet", new_blog_path, class:'btn btn-outline btn-primary' %>
+        
+        <% @blog.each do |tweet| %>
+        <h4>Tweet:<%= tweet.content %></h4>
+        <%= link_to "編集する", edit_blog_path(tweet.id), class: 'btn btn-sm btn-success' %>
+        <%= link_to "削除する", blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
+        <% end %>
+        <br>
+    </div>
+</div>
