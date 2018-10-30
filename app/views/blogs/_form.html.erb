@@ -1,0 +1,21 @@
+<%= form_for(@blog, url: choose_new_or_edit) do |f| %>
+        <% if @blog.errors.any? %>
+            <div id="error_explanation_c">
+                <h2><%= @blog.errors.count%>件のエラーがあります</h2>
+                <ul>
+                <% @blog.errors.full_messages.each do |mes|%>
+                    <li><%= mes %></li>
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+               
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control form-control-lg' %>
+        
+        <br>
+        <%= f.submit "投稿", class: 'btn btn-outline-primary' %>
+        
+        <%= link_to "一覧に戻る", blogs_path %>
+  
+<% end %>

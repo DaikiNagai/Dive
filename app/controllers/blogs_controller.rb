@@ -26,7 +26,7 @@ class BlogsController < ApplicationController
   end
   
   def update
-    @blog = Blog.update(blogs_params)
+    @blog.update(blogs_params)
     if @blog.save
       redirect_to blogs_path
     else
@@ -43,6 +43,7 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?
   end
+  
   private
     def blogs_params
       params.require(:blog).permit(:content)

@@ -1,7 +1,10 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
-    <%= @blog.each do |tweet| %>
+    <h3>Tweet一覧</h3>
+    
+    
+    <% @blog.each do |tweet| %>
     <h4>Tweet:<%= tweet.content %></h4>
+    <%= link_to "編集する", edit_blog_path(tweet.id) %>
+    <%= link_to "削除する", blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'} %>
     <% end %>
     
     <%= link_to "New tweet", new_blog_path %>
