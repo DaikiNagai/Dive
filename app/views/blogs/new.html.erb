@@ -1,0 +1,15 @@
+<%= form_for(@blog, url: confirm_blogs_path) do |f| %>
+<div class="container">
+    <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+        <h2>新規投稿</h2>
+        
+        <%= f.label :content %>
+        <%= f.text_field :content, class: 'form-control form-control-lg' %>
+        
+        <br>
+        <%= f.submit "投稿", class: 'btn btn-outline-primary' %>
+        
+        <%= link_to "一覧に戻る", blogs_path %>
+    </div>
+</div>
+<% end %>
