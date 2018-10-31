@@ -1,16 +1,16 @@
-<div id="page-top-btn2" class="page-top-btn">
-    <p><a class="move-page-top" id="move-page-top2">▲</a></p>
+<div id="page-top-btn" class="page-top-btn">
+    <p><a class="move-page-top" id="move-page-top">▲</a></p>
 </div>
 
 <div class="container">
     <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
         <h3>Tweet一覧</h3>
-        <%= link_to "New tweet", new_blog_path, class:'btn btn-outline btn-primary' %>
+        <%= link_to "New tweet", new_blog_path, class:'btn btn-outline btn-primary', id:'kk' %>
         
         <% @blog.each do |tweet| %>
         <h4>Tweet:<%= tweet.content %></h4>
-        <%= link_to "編集する", edit_blog_path(tweet.id), class: 'btn btn-sm btn-success' %>
-        <%= link_to "削除する", blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'}, class: 'btn btn-sm btn-danger' %>
+        <a href="<%=edit_blog_path(tweet.id)%>"><img src="<%=asset_path"edit.jpg"%>" width="60" height="60" class="edit"></a>
+        <%= link_to image_tag(asset_path"delete.png"), blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'}, class: 'delete' %>
         <% end %>
         <br>
     </div>

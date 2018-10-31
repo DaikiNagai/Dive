@@ -39,6 +39,12 @@ class BlogsController < ApplicationController
     redirect_to blogs_path
   end
   
+  def delete
+    @blog = Blog.all
+    @blog.destroy
+    redirect_to blogs_path
+  end
+  
   def confirm
     @blog = Blog.new(blogs_params)
     render :new if @blog.invalid?

@@ -1,6 +1,56 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-default {
+    border: 0;
+}
+.navbar {
+    background-color: transparent;
+    color: #330000	;
+    margin-bottom: 0px;
+}
+.navbar-default {
+  .navbar-brand {
+    color: #ccc;
+    &:hover {
+      color: white;
+    }
+  }
+  .navbar-nav > li > a {
+    color: #ccc;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-nav > .open > a {
+    background-color: transparent;
+    color: white;
+    &:hover, &:focus {
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+    &:hover, &:focus {
+      color: black;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+
+
+
+
 header {
     width: 100%;
     background-color: #00AFFF;
@@ -21,6 +71,14 @@ footer{
     width: 100%;
     background-color: #00AFFF;
     height: 20px;
+}
+
+h3{
+    text-align: left;
+}
+
+#kk{
+    float: left;
 }
 
 .btn-outline {
@@ -78,4 +136,17 @@ footer{
   &:hover {
   opacity: 0.7;
   }
+}
+
+img.edit:hover{
+ opacity: 0.5;
+ cursor: pointer;
+}
+img.edit:active{
+    position: relative;
+    top: 3px;
+}
+.delete{
+    width: 60px;
+    height: 60px;
 }
