@@ -4,14 +4,27 @@
 
 <div class="container">
     <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-        <h3>Tweet一覧</h3>
-        <%= link_to "New tweet", new_blog_path, class:'btn btn-outline btn-primary', id:'kk' %>
-        
-        <% @blog.each do |tweet| %>
-        <h4>Tweet:<%= tweet.content %></h4>
-        <a href="<%=edit_blog_path(tweet.id)%>"><img src="<%=asset_path"edit.jpg"%>" width="60" height="60" class="edit"></a>
-        <%= link_to image_tag(asset_path"delete.png"), blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'}, class: 'delete' %>
-        <% end %>
+        <h3 id="sub_title">Tweet一覧</h3>
         <br>
+        <br>
+        <br>
+        <%= link_to "New tweet", new_blog_path, class:'btn btn-outline btn-primary', id:'new_tweet' %>
+        <div id='clock_date'></div>
+        <div id='clock_time'></div>
+        <br>
+        <br>
+        <br>
+        <div class='tweet_all'>
+            <% @blog.each do |tweet| %>
+            <h4 id='tweet'><%= tweet.content %></h4>
+            <br>
+            <h5 id='tweet_time'><%= tweet.updated_at.strftime("%Y-%m-%d %H:%M")%></h5>
+            <br>
+            <p>___________________________________________________</p>
+            <a href="<%=edit_blog_path(tweet.id)%>"><img src="<%=asset_path"edit.jpg"%>" width="60" height="60" class="edit"></a>
+            <%= link_to image_tag(asset_path"s_delete.png", :width=>"60"), blog_path(tweet.id), method:  :delete, data:{confirm: '本当に削除していいですか？'}, class: 'delete' %>
+            <% end %>
+            <br>
+        </div>
     </div>
 </div>

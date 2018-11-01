@@ -1,19 +1,22 @@
 <div class="container">
     <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
-        <h3>以下の内容で投稿する</h3>
-        
+        <h2>以下の内容で投稿する</h2>
+        <br><br>
         <%= form_for(@blog) do |f| %>
             <%= f.label :content %>
             <%= f.hidden_field :content %>
             <br>
-            <p><%= @blog.content %></p>
-            <%= f.submit "Tweet!", class: 'btn btn-outline-primary btn-block'%>
+            <p id='confirm_tweet'><%= @blog.content %></p>
+            <br><br>
+            <%= f.submit "Tweet!", class: 'btn btn-primary btn-block'%>
             
         <% end %>
         
+        <br>
+        
         <%= form_for(@blog, url:new_blog_path, method:'get') do |f| %>
             <%= f.hidden_field :content %>
-            <%= f.submit "戻る", name: 'back', class: 'btn btn-outline-dark' %>
+            <%= f.submit "戻る", name: 'back', class: 'btn btn-info btn-block' %>
         <% end %>
         
     </div>
