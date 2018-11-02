@@ -40,8 +40,9 @@ class BlogsController < ApplicationController
   end
   
   def delete
-    @blog = Blog.all
-    @blog.destroy
+    Blog.all.each do |tweet|
+      tweet.destroy
+    end
     redirect_to blogs_path
   end
   

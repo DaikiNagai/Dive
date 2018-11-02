@@ -15,7 +15,7 @@
         <br>
         <br>
         <div class='tweet_all'>
-            <% @blog.each do |tweet| %>
+            <% @blog.reverse_each do |tweet| %>
             <h4 id='tweet'><%= tweet.content %></h4>
             <br>
             <h5 id='tweet_time'><%= tweet.updated_at.strftime("%Y-%m-%d %H:%M")%></h5>
